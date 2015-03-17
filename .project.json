@@ -1,0 +1,13 @@
+{
+  "linter": {
+    "ESLintNewApproach": false,
+    "ESLintCustomBaseFile": "",
+    "ESLintRulesDirectory": "",
+    "ESLintPluginName": "",
+    "ESLintPluginFile": ""
+  },
+  "hcpdeploy": {
+    "account": "p1941210198trial",
+    "name": "intellipark"
+  }
+}
