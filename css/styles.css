@@ -1,0 +1,18 @@
+body{
+	//padding-top: 25px;
+}
+
+.table{
+	text-align: center;
+}
+
+#freeSpace{
+	background-color: #0f0;
+}
+#occupiedSpace{
+	background-color: #f00;
+}
+#parkingTable{
+	max-width: 300px;
+	
+}
