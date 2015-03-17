@@ -1,0 +1,12 @@
+{
+  "beautifier": {
+    "keep_array_indentation": true,
+    "break_chained_methods": false,
+    "space_before_conditional": true,
+    "unescape_strings": false,
+    "tab_size": "1",
+    "max_preserve_newlines": "2",
+    "wrap_line_length": "140",
+    "brace_style": "collapse"
+  }
+}
