@@ -11,7 +11,7 @@ var parkingModel = [];
 function initializeParkingModel(width, height) {
     for(var i=0; i < width; i++){
         for(var j=0; j < height; j++){
-            parkingModel.push({
+            parkingModel.push({ 
                 x: i,
                 y: j,
                 status: "free"
