@@ -2,28 +2,32 @@
  * {
      x: 1,
      y: 1,
-     status: "occupied", "free", "reserved"
+     status: "occupiedSpace", "free", "reserved"
  }
  */
  
 var parkingModel = [];
 
 function initializeParkingModel(width, height) {
+    parkingModel = [width];
     for(var i=0; i < width; i++){
+        parkingModel[i] = [];
         for(var j=0; j < height; j++){
-            parkingModel.push({ 
-                x: i,
-                y: j,
-                status: "free"
-            });
+            if(j % 2 == 0)
+                parkingModel[i].push({ 
+                    status: "freeSpace"
+                });
+            else
+                parkingModel[i].push({ 
+                    status: "roadSpace"
+                });
+
         }
     }
 }
 
-function isFree(slotId){
-    if(slotId < parkingModel.length && parkingModel[slotId] === "free"){
-        return true;
-    }
+function getStatus(x, y){
+    return parkingModel[x][y].status;
 }
 
 function getBestParkingSlot(){
