@@ -15,9 +15,22 @@ body{
 .roadSpace{
 	background-color: #888;
 }
+.reservedSpace{
+	background-color: #f50;
+}
+
+.userSpace{
+	background-color: #909;
+}
+
+#spaceCount{
+	text-align: center;
+}
+
 
 #parkingTable{
 	max-width: 500px;
+	padding: 10px;
 }
 
 td{
