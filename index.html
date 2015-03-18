@@ -54,9 +54,9 @@
 				<div class = "col-sm-4 col-sm-offset-4 text-center">
 					<select id="gridSelect" class="form-control select select-primary select-block mbl center" onchange="changeFunc();">
 						<optgroup label="Floors">
-							<option value="0"><a href="index.html">Floor 1</a></option>
-							<option value="1"><a href="index.html">Floor 2</a></option>
-							<option value="2"><a href="index.html">Floor 3</a></option>
+							<option value="0">Floor 1</option>
+							<option value="1">Floor 2</option>
+							<option value="2">Floor 3</option>
 						</optgroup>
 					</select>
 				</div>
@@ -83,7 +83,7 @@
 			<div class="footerContainer">
 				<img class="cityIcon col-md-3" src="img/smartCityIcon.png">
 				<div class="contributorContainer col-md-6 ">
-					<h3>Our Contributers</h3>
+					<h3>Our Contributors</h3>
 					<ul class="contributorList">
 						<li>Mohammed Al Hamed</li>
 						<li>Nenad Kircanski</li>
@@ -106,7 +106,7 @@
 		<script>
 		$("select").select2({dropdownCssClass: 'dropdown-inverse'});
 		function changeFunc(){
-			 $(location).attr("href", "index.html");
+			 initializeParkingModel(rows, cols)
 		}
 		</script>
 	</body>
