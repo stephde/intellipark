@@ -3,6 +3,10 @@ html, body{
 	height: 100%;
 }
 
+.navbar {
+	margin-bottom: 0 !important;
+}
+
 /* Wrapper for page content to push down footer */
 .wrapContent {
 	min-height: 100%;
@@ -15,19 +19,38 @@ html, body{
 
 /* Set the fixed height of the footer here */
 #footer {
+	display: inline-table;
 	height: 60px;
 	width: 100%;
-}
-
-.footerContainer{
-	text-align: center;
 	background-color: #e5e9ea;
 }
 
-.contributorList{
-	list-style-type: none;
+#banner {
+	width: 100%;
+}
+.footerContainer{
+	text-align: center;
+	background-color: #e5e9ea;
+	width: 100%;
 }
 
+.cityIcon{
+	float: left;
+	background-color: #e5e9ea;
+	margin: 5rem;
+}
+
+.contributorContainer{
+	background-color: #e5e9ea;
+}
+.contributorList{
+	list-style-type: none;
+	display: inline-flex;
+}
+
+.contributorList > li {
+	padding: 1rem;
+}
 .table{
 	text-align: center;
 }
