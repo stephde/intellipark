@@ -11,6 +11,7 @@ var userCoordinates
 var parkingModelChange = false;
 var spaceCount = 0;
 
+
 function initializeParkingModel(width, height) {
     userCoordinates = [1, height];
     setInterval(updateParkingGrid, 5000);
@@ -25,13 +26,12 @@ function initializeParkingModel(width, height) {
             else
                 parkingModel[i].push({
                     status: "roadSpace"
-                }
-                );
-
+                });
         }
     }
     parkingModel[userCoordinates[1]][userCoordinates[0]].status = "userSpace";
     reserveSlot(getBestParkingSlot())
+    //updateParkingGrid();
 }
 
 function getStatus(x, y) {
@@ -50,17 +50,25 @@ function getBestParkingSlot() {
 
 function updateParkingGrid() {
     //update the html grid
+    //clear the old grid
     $('#parkingTable tr').remove();
-    for (var i = 0; i < rows; i++){
+    for (var i = 0; i < rows; i++) {
+        //add a row
         $("#parkingTable tbody").append("<tr></tr>");
-        for(var j = 0; j < cols; j++){
-            $("#parkingTable tr:last-child").append("<td class='"+getStatus(i,j)+"' onclick = 'reserveSlot("+i+','+j+")'></td>");
+        for (var j = 0; j < cols; j++) {
+            //add a column in the row
+            //set the class according to the parkingModel
+            if(j == userCoordinates[0] && i == userCoordinates[1])
+                $("#parkingTable tr:last-child").append("<td class='userSpace' onclick = 'reserveSlot(" + i + ',' + j + ")'></td>");
+            else
+                $("#parkingTable tr:last-child").append("<td class='" + getStatus(i, j) + "' onclick = 'reserveSlot(" + i + ',' + j + ")'></td>");
+            
         }
     }
-    parkingModel[userCoordinates[1]][userCoordinates[0]].status = "userSpace";
+    
     //update available spaces
     countSpaces();
-    $("#spaceCount").text("Available Spaces: "+spaceCount);
+    $("#spaceCount").text("Available Spaces: " + spaceCount);
 }
 
 function reserveSlot(spot){
@@ -69,11 +77,12 @@ function reserveSlot(spot){
         parkingModel[spot[0]][spot[1]].status = "reservedSpace";
     }
 }
-function countSpaces(){
+
+function countSpaces() {
     spaceCount = 0;
-    for (var i = 0; i < rows; i++){
-        for(var j = 0; j < cols; j++){
-            if(getStatus(i,j) == "freeSpace")
+    for (var i = 0; i < rows; i++) {
+        for (var j = 0; j < cols; j++) {
+            if (getStatus(i, j) == "freeSpace")
                 spaceCount++;
         }
     }
