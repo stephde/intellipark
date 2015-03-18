@@ -20,9 +20,14 @@ function initializeParkingModel(width, height) {
         parkingModel[i] = [];
         for (var j = 0; j < height; j++) {
             if (j % 2 === 0)
-                parkingModel[i].push({
-                    status: "freeSpace"
-                });
+                if(Math.random() > 0.5)
+                    parkingModel[i].push({
+                        status: "occupiedSpace"
+                    });
+                else
+                    parkingModel[i].push({
+                        status: "freeSpace"
+                    });
             else
                 parkingModel[i].push({
                     status: "roadSpace"
@@ -31,6 +36,7 @@ function initializeParkingModel(width, height) {
     }
 
     reserveSlot(getBestParkingSlot());
+    updateParkingGrid();
 }
 
 function getStatus(x, y) {
@@ -90,3 +96,4 @@ function countSpaces() {
         }
     }
 }
+
