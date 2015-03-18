@@ -6,8 +6,8 @@
  }
  */
 var parkingModel = [];
-var userCoordinates
-
+var userCoordinates;
+var hasUserFoundASpace = false;
 var parkingModelChange = false;
 var spaceCount = 0;
 
@@ -29,20 +29,19 @@ function initializeParkingModel(width, height) {
                 });
         }
     }
-    parkingModel[userCoordinates[1]][userCoordinates[0]].status = "userSpace";
-    reserveSlot(getBestParkingSlot())
-    //updateParkingGrid();
+
+    reserveSlot(getBestParkingSlot());
 }
 
 function getStatus(x, y) {
-    return parkingModel[x][y].status
+    return parkingModel[x][y].status;
 }
 
 function getBestParkingSlot() {
     for (var i = 0; i < parkingModel.length; i++) {
         for(var j=0; j < parkingModel[i].length; j++){
             if (getStatus(i, j) === "freeSpace") {
-                return [i, j]
+                return [i, j];
             }
         }
     }
@@ -69,6 +68,10 @@ function updateParkingGrid() {
     //update available spaces
     countSpaces();
     $("#spaceCount").text("Available Spaces: " + spaceCount);
+
+    //see whether user has found a space
+    if(hasUserFoundASpace)
+        $(location).attr("href", "endScreen.html");
 }
 
 function reserveSlot(spot){

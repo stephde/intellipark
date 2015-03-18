@@ -20,7 +20,7 @@
       <script src="js/vendor/html5shiv.js"></script>
       <script src="js/vendor/respond.min.js"></script>
     <![endif]-->
-    <script src="js/parkingModel.js"></script>
+
   </head>
   <body>
     
@@ -54,13 +54,19 @@
     <img id="banner" src="img/pictures/banner.png">
 
     <div class="wrapContent">
-       <h3 id="spaceCount"></h3>
-        <!--parking table-->
-        <table id="parkingTable" class="table responsive-table" align="center">
-            <tbody>
+       <div id ="registration" class = "container">
+          <div class = "row">
 
-            </tbody>
-        </table>
+            <div class = "col-md-8 col-md-offset-2">
+              <input type="text" placeholder="Work Username" class="form-control flat input-hg" />
+              <input type="password" placeholder="Password" class="form-control flat input-hg" />
+              <a href="destination.html"><button class="btn btn-hg btn-primary">
+                Log-in
+              </button>
+              </a>
+            </div>
+          </div>
+       </div>
     </div>
 
     <div id="footer">
@@ -85,8 +91,7 @@
     <script src="js/vendor/video.js"></script>
     <script src="js/flat-ui.min.js"></script>
 	
-	<script src = "js/carController.js"></script>
-	<script src = "js/parkingSpace.js"></script>
+	
 	
   </body>
 </html>

@@ -17,6 +17,12 @@ html, body{
 	padding: 0 0 60px;
 }
 
+#wrapper { display: none; }
+
+#registration{
+	padding: 20px;
+}
+
 /* Set the fixed height of the footer here */
 #footer {
 	display: inline-table;

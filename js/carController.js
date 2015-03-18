@@ -16,16 +16,16 @@ document.onkeydown = function(e) {
         dx = 1;
     }
     //check if out of bounds
-    if(!((userCoordinates[0] + dx >= cols) || (userCoordinates[0] + dx < 0) || (userCoordinates[1] - dy >= rows) || (userCoordinates[1] - dy < 0))){
-    	//update user co-ords
-    	userCoordinates[0] += dx;
-    	userCoordinates[1] -= dy;
-    	//if the user is on a free space or their reserved space change it's status to occupied
-    	var stat = parkingModel[userCoordinates[1]][userCoordinates[0]].status;
-    	if( stat == "freeSpace" || stat == "reservedSpace")
-    		parkingModel[userCoordinates[1]][userCoordinates[0]].status = "occupiedSpace";
+    if (!((userCoordinates[0] + dx >= cols) || (userCoordinates[0] + dx < 0) || (userCoordinates[1] - dy >= rows) || (userCoordinates[1] - dy < 0))) {
+        //update user co-ords
+        userCoordinates[0] += dx;
+        userCoordinates[1] -= dy;
+        //if the user is on a free space or their reserved space change it's status to occupied
+        var stat = parkingModel[userCoordinates[1]][userCoordinates[0]].status;
+        if (stat == "freeSpace" || stat == "reservedSpace") {
+            parkingModel[userCoordinates[1]][userCoordinates[0]].status = "occupiedSpace";
+            hasUserFoundASpace = true;
+        }
     }
-
-
     updateParkingGrid();
 };
