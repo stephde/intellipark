@@ -5,13 +5,14 @@
      status: "occupiedSpace", "free", "reserved"
  }
  */
-var userCoordinates = [1, height];
 var parkingModel = [];
+var userCoordinates
 
 var parkingModelChange = false;
 var spaceCount = 0;
 
 function initializeParkingModel(width, height) {
+    userCoordinates = [1, height];
     setInterval(updateParkingGrid, 5000);
     parkingModel = [width];
     for (var i = 0; i < width; i++) {
@@ -30,16 +31,19 @@ function initializeParkingModel(width, height) {
         }
     }
     parkingModel[userCoordinates[1]][userCoordinates[0]].status = "userSpace";
+    reserveSlot(getBestParkingSlot())
 }
 
 function getStatus(x, y) {
-    return parkingModel[x][y].status;
+    return parkingModel[x][y].status
 }
 
 function getBestParkingSlot() {
     for (var i = 0; i < parkingModel.length; i++) {
-        if (isFree(i)) {
-            return i;
+        for(var j=0; j < parkingModel[i].length; j++){
+            if (getStatus(i, j) === "freeSpace") {
+                return [i, j]
+            }
         }
     }
 }
@@ -59,10 +63,10 @@ function updateParkingGrid() {
     $("#spaceCount").text("Available Spaces: "+spaceCount);
 }
 
-function reserveSlot(i, j){
-    console.info(i+","+ j);
-    if(parkingModel[i][j].status == "freeSpace" && parkingModel[i][j].status != "roadSpace"){
-        parkingModel[i][j].status = "reservedSpace";
+function reserveSlot(spot){
+    console.info(spot[0]+","+ spot[1]);
+    if(parkingModel[spot[0]][spot[1]].status == "freeSpace" && parkingModel[spot[0]][spot[1]].status != "roadSpace"){
+        parkingModel[spot[0]][spot[1]].status = "reservedSpace";
     }
 }
 function countSpaces(){

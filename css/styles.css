@@ -65,7 +65,8 @@ html, body{
 	background-color: #888;
 }
 .reservedSpace{
-	background-color: #f50;
+	background-color: #f95;
+	border: 3px dashed darkblue;
 }
 
 .userSpace{
