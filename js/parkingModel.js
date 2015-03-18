@@ -70,8 +70,8 @@ function updateParkingGrid() {
     $("#spaceCount").text("Available Spaces: " + spaceCount);
 
     //see whether user has found a space
-    if(hasUserFoundASpace)
-        $(location).attr("href", "endScreen.html");
+    if(hasUserFoundASpace)        
+       $(location).attr("href", "endScreen.html");
 }
 
 function reserveSlot(spot){
