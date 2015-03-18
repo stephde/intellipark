@@ -1,4 +1,5 @@
 document.onkeydown = function(e) {
+    e.preventDefault();
     var dy = 0,
         dx = 0;
     if (e.keyCode == '38') {

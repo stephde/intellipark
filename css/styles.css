@@ -118,7 +118,7 @@ td{
 	width: 100px;
 	height: 100px;
 	padding: 18px 0;
-	margin: 0 0.2em;
+	margin: 0 0.3em 0.5em 0.3em;
 	color: none;
 	border-radius: 5px;
 	font-size: 1.2em;
@@ -131,4 +131,15 @@ td{
 .fui-checkbox-unchecked::before {
 	display: none;
 	background: none;
+}
+
+#slider {
+	margin: 15px 0;
+}
+
+#prefFloorNum {
+	font-weight: 700;
+	font-family: 'Lato',Helvetica,Arial,sans-serif;
+	font-size: 18px;
+	color: #34495e;
 }

@@ -48,34 +48,37 @@
 		</div>
 		<!--end of navbar-->
 		<img id="banner" src="img/pictures/banner.png">
-		<div class="wrapContent">
-			<h3 id="spaceCount">Available: 00</h3>
-			<div class = "row">
-				<div class = "col-sm-4 col-sm-offset-4 text-center">
-					<select id="gridSelect" class="form-control select select-primary select-block mbl center" onchange="changeFunc();">
-						<optgroup label="Floors">
-							<option value="0">Floor 1</option>
-							<option value="1">Floor 2</option>
-							<option value="2">Floor 3</option>
-						</optgroup>
-					</select>
+		<div class="container">
+			<div class="col-lg-12">
+         		<h1>Availability</h1>
+				<h3 id="spaceCount">Available: 00</h3>
+				<div class = "row">
+					<div class = "col-sm-4 col-sm-offset-4 text-center">
+						<select id="gridSelect" class="form-control select select-primary select-block mbl center" onchange="changeFunc();">
+							<optgroup label="Floors">
+								<option value="0">Floor 1</option>
+								<option value="1">Floor 2</option>
+								<option value="2">Floor 3</option>
+							</optgroup>
+						</select>
+					</div>
 				</div>
-			</div>
-			<div id="detailPerspective">
-				<!--parking table-->
-				<table id="parkingTable" class="table responsive-table" align="center">
-					<tbody>
-					</tbody>
-				</table>
-			</div>
-			<div class = "row">
-				<div class="key col-sm-4 col-sm-offset-4 text-center">
-					<ul>
-						<li><span class="fui-checkbox-unchecked" style = "background-color:#0f0">Empty Space</span></li>
-						<li><span class="fui-checkbox-unchecked" style = "background-color:#f00">Occupied Space</span></li>
-						<li><span class="fui-checkbox-unchecked" style = "background-color:#f95">Reserved Space</span></li>
-						<li><span class="fui-checkbox-unchecked" style = "background-color:#909">Your Car</span></li>
-					</ul>
+				<div id="detailPerspective">
+					<!--parking table-->
+					<table id="parkingTable" class="table responsive-table" align="center">
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+				<div class = "row">
+					<div class="key col-sm-6 col-sm-offset-3 text-center">
+						<ul>
+							<li><span class="fui-checkbox-unchecked" style = "background-color:#0f0">Empty Space</span></li>
+							<li><span class="fui-checkbox-unchecked" style = "background-color:#f00">Occupied Space</span></li>
+							<li><span class="fui-checkbox-unchecked" style = "background-color:#f95">Reserved Space</span></li>
+							<li><span class="fui-checkbox-unchecked" style = "background-color:#909">Your Car</span></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
