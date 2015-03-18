@@ -1,5 +1,31 @@
-body{
+html, body{
 	//padding-top: 25px;
+	height: 100%;
+}
+
+/* Wrapper for page content to push down footer */
+.wrapContent {
+	min-height: 100%;
+	height: auto;
+	/* Negative indent footer by its height */
+	margin: 0 auto -60px;
+	/* Pad bottom by footer height */
+	padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+	height: 60px;
+	width: 100%;
+}
+
+.footerContainer{
+	text-align: center;
+	background-color: #e5e9ea;
+}
+
+.contributorList{
+	list-style-type: none;
 }
 
 .table{
