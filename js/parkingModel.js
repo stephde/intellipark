@@ -57,6 +57,7 @@ function updateParkingGrid() {
     //update the html grid
     //clear the old grid
     $('#parkingTable tr').remove();
+    $('#parkingTable').append('<tr><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</td><td>G</td><td>H</td><td>I</td></tr>');
     for (var i = 0; i < rows; i++) {
         //add a row
         $("#parkingTable tbody").append("<tr></tr>");
@@ -64,9 +65,9 @@ function updateParkingGrid() {
             //add a column in the row
             //set the class according to the parkingModel
             if(j == userCoordinates[0] && i == userCoordinates[1])
-                $("#parkingTable tr:last-child").append("<td class='userSpace' onclick = 'reserveSlot(" + i + ',' + j + ")'></td>");
+                $("#parkingTable tr:last-child").append("<td class='userSpace' onclick = 'reserveSlot(" + i + ',' + j + ")'><span class='slotNumber''>"+i+"</span></td>");
             else
-                $("#parkingTable tr:last-child").append("<td class='" + getStatus(i, j) + "' onclick = 'reserveSlot(" + i + ',' + j + ")'></td>");
+                $("#parkingTable tr:last-child").append("<td class='" + getStatus(i, j) + "' onclick = 'reserveSlot(" + i + ',' + j + ")'><span class='slotNumber''>"+i+"</span></td>");
             
         }
     }
