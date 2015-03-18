@@ -34,6 +34,7 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><a onclick="switchView()">Switch View</a> </li>
             <li class="active"><a href="index.html">Find a Parking Space</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#contact">Help</a></li>
@@ -44,6 +45,7 @@
                 <li class="divider"></li>
               </ul>
             </li>
+            <li><a href="#singin">Sign In</a></li>
           </ul>
         </div>
         <!--/.nav-collapse -->
@@ -54,13 +56,19 @@
     <img id="banner" src="img/smartParkingBg.jpg">
 
     <div class="wrapContent">
-       <h3 id="spaceCount"></h3>
+      <div id="detailPerspective">
+        <h3 id="spaceCount"></h3>
         <!--parking table-->
         <table id="parkingTable" class="table responsive-table" align="center">
-            <tbody>
+          <tbody>
 
-            </tbody>
+          </tbody>
         </table>
+      </div>
+
+      <div id="overviewPerspective inactive">
+        <img id="overviewMap" src="img/overviewMap.jpg" class="col-md-12 inactive">
+      </div>
     </div>
 
     <div id="footer">

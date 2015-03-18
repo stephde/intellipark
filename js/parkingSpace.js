@@ -12,3 +12,9 @@ for (var i = 0; i < rows; i++){
 		$("#parkingTable tr:last-child").append("<td class='"+getStatus(i,j)+"' onclick = 'reserveSlot("+i+','+j+")'></td>");
 	}
 }
+
+function switchView(){
+	$("#detailPerspective").toggleClass("inactive")
+	$("#overviewPerspective").toggleClass("inactive")
+	$("#overviewMap").toggleClass("inactive")
+}
